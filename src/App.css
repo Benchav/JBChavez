@@ -1,0 +1,11 @@
+/* 🔧 Estilos globales para prevenir overflow lateral */
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }

@@ -1,0 +1,153 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #ccd6f6;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.logo-highlight {
+  color: #64ffda;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  color: #8892b0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.nav-item:hover {
+  color: #64ffda;
+}
+
+.nav-underline {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  width: calc(100% - 2rem);
+  height: 2px;
+  background: #64ffda;
+  transition: width 0.3s ease;
+  transform-origin: left;
+}
+
+/* Estilos del menú hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background: #64ffda;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+  .header {
+    padding: 1.5rem 5%;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-container {
+    position: fixed;
+    top: 0;
+    right: -65%;
+    height: 100vh;
+    width: 65%;
+    background: rgba(10, 25, 47, 0.98);
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.3s ease;
+    padding: 2rem 1.5rem;
+  }
+
+  .nav-container.active {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-left: 0; /* 🛠️ Ajustado */
+    width: 100%;     /* 🛠️ Asegura uso completo del espacio */
+  }
+
+  .nav-item {
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 0.5rem 1rem; /* 🛠️ Más padding lateral */
+    box-sizing: border-box; /* 🛠️ Para que no se desborde */
+  }
+
+  .nav-underline {
+    left: 1rem; /* 🛠️ Alineado con el texto */
+    width: calc(100% - 2rem); /* 🛠️ Respeta el nuevo padding */
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+}
+
+/* Ajustes para desktop */
+@media (min-width: 769px) {
+  .nav-list {
+    margin-right: 2%;
+  }
+
+  .nav-item:hover .nav-underline {
+    width: calc(100% - 2rem);
+  }
+}
