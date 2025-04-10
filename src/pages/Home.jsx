@@ -13,7 +13,7 @@ function Home() {
           className="img-container"
         >
           <img 
-            src="/src/assets/images/profile.jpeg" 
+            src="https://i.ibb.co/rRb27G8C/profile.jpg" 
             alt="Joshua Chávez" 
             className="profile-img" 
           />
@@ -47,7 +47,7 @@ function Home() {
         </motion.p>
 
         <motion.a
-          href="/src/assets/pdf/joshuaCV.pdf"
+          href="https://unanmanagua-my.sharepoint.com/:b:/g/personal/joshua_chavez22906906_estu_unan_edu_ni/ESfOJlGe3s5LiRj_J0gL0BoBUPobbHifh-X0hon0K26-WA?e=rebwFv"
           className="cv-button"
           download
           whileHover={{ scale: 1.05 }}
