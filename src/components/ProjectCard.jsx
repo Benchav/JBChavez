@@ -24,7 +24,7 @@ function ProjectCard({ title, description, technologies, image, link }) {
         <h3 className="project-title">{title}</h3>
         <p className="project-description">{description}</p>
         <p className="project-technologies">
-          <strong>Tecnologías:</strong> {technologies}
+          <strong>Tecnologías</strong> {technologies}
         </p>
         
         <motion.a
