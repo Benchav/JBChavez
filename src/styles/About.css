@@ -1,0 +1,115 @@
+.about-section {
+    padding: 6rem 8%;
+    background: #0a192f;
+    color: #ccd6f6;
+  }
+  
+  .about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .about-card {
+    background: #112240;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+  }
+  
+  .about-card h3 {
+    color: #64ffda;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-card p {
+    color: #8892b0;
+    line-height: 1.6;
+  }
+  
+  .skills-container {
+    margin-top: 4rem;
+  }
+  
+  .skills-container h3 {
+    color: #64ffda;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .skill-category {
+    background: #112240;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+  }
+  
+  .skill-category h4 {
+    color: #ccd6f6;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #64ffda;
+    padding-bottom: 0.5rem;
+  }
+  
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skill-category li {
+    color: #8892b0;
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .skill-category li::before {
+    content: '▹';
+    color: #64ffda;
+    position: absolute;
+    left: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .about-section {
+      padding: 4rem 5%;
+    }
+    
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-card {
+      padding: 1.5rem;
+    }
+    
+    .skill-category {
+      padding: 1rem;
+    }
+    
+    .skill-category li {
+      font-size: 0.9rem;
+    }
+  }

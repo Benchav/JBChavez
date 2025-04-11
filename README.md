@@ -1,3 +1,3 @@
 # Mi portaFolio
 
-Los meros meros chachaaauuu (/'°-°'\)
+Los meros meros chachaaauuu 
