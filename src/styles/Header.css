@@ -151,3 +151,11 @@
     width: calc(100% - 2rem);
   }
 }
+
+
+
+.header {
+  padding: 1rem 8%;  /* Reduce el padding si es necesario */
+  /* Otros ajustes de altura */
+}
+

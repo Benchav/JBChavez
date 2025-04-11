@@ -4,17 +4,21 @@ import '../styles/Header.css';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
+    const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
+
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      const offsetTop = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
       setIsMenuOpen(false);
     }
   };
 
   const navItems = [
     { id: 'home', label: 'Inicio' },
-    {id : 'about', label: 'Sobre_Mi'},
+    { id: 'about', label: 'Sobre_Mi' },
     { id: 'projects', label: 'Proyectos' },
     { id: 'contact', label: 'Contacto' }
   ];
@@ -29,6 +33,7 @@ function Header() {
       <motion.h1 
         className="logo"
         whileHover={{ scale: 1.05 }}
+        onClick={() => scrollToSection('home')}
       >
         Joshua<span className="logo-highlight">Chavez</span>
       </motion.h1>
