@@ -15,10 +15,10 @@ const projects = [
     },
     {
       id: 3,
-      title: "Portafolio web",
-      description: "Portafolio personal usando React y Node.js.",
-      image: "https://i.ibb.co/M5g9C4Vq/jbportafolio.png",
-      link: "https://portafolio-three-puce.vercel.app/"
+      title: "Cutler Gym",
+      description: "Web para gimnasio Cutler fitness gym usando React + vite y Node.js.",
+      image: "https://i.ibb.co/Q7HmPjzj/cutler.png",
+      link: "https://cutlergym.vercel.app/"
     }
   ];
   
