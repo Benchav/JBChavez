@@ -19,6 +19,27 @@ const projects = [
       description: "Web para gimnasio Cutler fitness gym usando React + vite y Node.js.",
       image: "https://i.ibb.co/Q7HmPjzj/cutler.png",
       link: "https://cutlergym.vercel.app/"
+    },
+      {
+      id: 4,
+      title: "Fast-api",
+      description: "Fast api en python para enviar correos con resend.",
+      image: "https://i.ibb.co/KcqPG7nd/fastapi.png",
+      link: "https://emailapijb.vercel.app/"
+    },
+    {
+      id: 5,
+      title: "Nicapages",
+      description: "Web empresarial nicapages usando react + vite y node.js.",
+      image: "https://i.ibb.co/mC5sNV5g/nicpages.png",
+      link: "https://www.nicapages.site/"
+    },
+    {
+      id: 6,
+      title: "Tasko",
+      description: "App de gestiòn y organizaciòn de tareas usando React native js y fastapi python",
+      image: "https://i.ibb.co/FLncfXVR/Home.jpg",
+      link: "https://github.com/Benchav"
     }
   ];
   

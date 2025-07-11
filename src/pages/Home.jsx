@@ -47,7 +47,7 @@ function Home() {
         </motion.p>
 
         <motion.a
-          href="https://unanmanagua-my.sharepoint.com/:b:/g/personal/joshua_chavez22906906_estu_unan_edu_ni/ESfOJlGe3s5LiRj_J0gL0BoBUPobbHifh-X0hon0K26-WA?e=rebwFv"
+          href="https://joshuachavez.vercel.app/"
           className="cv-button"
           download
           whileHover={{ scale: 1.05 }}
