@@ -65,9 +65,16 @@ const projects = [
     {
       id: 10,
       title: "Tasko",
-      description: "App de productividad, gestiòn y organizaciòn de tareas usando React native js y fastapi python",
+      description: "Aplicación de productividad, gestiòn y organizaciòn de tareas usando React native js y fastapi python",
       image: "https://i.ibb.co/FLncfXVR/Home.jpg",
       link: "https://github.com/Benchav"
+    },
+    {
+      id: 10,
+      title: "InsBarrera",
+      description: "Apliación de compra de productos pasteles, carrito de compras, compra, inventario usando Flutter y Api en C#",
+      image: "https://i.ibb.co/TDq2QfjQ/insbarrera.jpg",
+      link: "https://github.com/Benchav/APP_InsBarrera.git"
     }
   ];
   
