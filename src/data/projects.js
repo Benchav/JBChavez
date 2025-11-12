@@ -9,7 +9,7 @@ const projects = [
         {
       id: 2,
       title: "Gestión Zapatos",
-      description: "Sistema web aplicado a gestión de inventario, Casa matriz y sucursale",
+      description: "Sistema web aplicado a gestión de inventario, Casa matriz y sucursale, Dominio y subdominios",
       image: "https://i.ibb.co/ksJX7Cff/payless.jpg",
       link: "https://www.proyect.site/"
     },
