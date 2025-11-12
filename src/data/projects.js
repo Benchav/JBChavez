@@ -82,6 +82,27 @@ const projects = [
       description: "fast api de la apliación tasko, usando python, crud completo y autenticación base de datos en firebase",
       image: "https://i.ibb.co/zhNhsnHP/fasttasko.jpg",
       link: "https://fasfttasko.vercel.app/docs#/"
+    },
+    {
+      id: 12,
+      title: "Api insumos barrera",
+      description: "Api en ASP.Net usando C#, crud completo",
+      image: "https://i.ibb.co/hJnnY9GL/api-insumosbarrera.jpg",
+      link: "https://github.com/Benchav/APIRestInsumos.git"
+    },
+    {
+      id: 13,
+      title: "Api zapatos",
+      description: "Api completa para gestión de zapatos por roles y permisos, usando Node.js y JavaScript",
+      image: "https://i.ibb.co/Pkr2dX1/payless-api.jpg",
+      link: "https://github.com/Benchav/Payless-Api.git"
+    },
+    {
+      id: 14,
+      title: "Api Constructora",
+      description: "Api diseñada en node.js en JavaScript, JWT token, roles y permisos, 13 modelos y su crud completo, protección de rutas y validaciones",
+      image: "https://i.ibb.co/sJVvM3NM/api-constructora.jpg",
+      link: "https://github.com/Benchav/Api_Constructora.git"
     }
   ];
   
