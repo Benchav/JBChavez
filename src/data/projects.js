@@ -1,4 +1,11 @@
 const projects = [
+      {
+      id: 1,
+      title: "Constructora",
+      description: "Sistema web completo aplicado a constructoras",
+      image: "https://i.ibb.co/TNdb6MZ/Captura-de-pantalla-2025-11-12-150117.jpg",
+      link: "https://rikiconstructora.vercel.app/"
+    },
     {
       id: 1,
       title: "Portafolio Web",

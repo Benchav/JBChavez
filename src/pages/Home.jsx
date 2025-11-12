@@ -43,7 +43,7 @@ function Home() {
           className="description"
         >
           Apasionado por la tecnología y el desarrollo de aplicaciones web.
-          <br />Participante en Hackathon Nicaragua y entusiasta de React, React Native, Flutter y Diseño UX/UI.
+          <br />Participante en Hackathon Nicaragua 2023, 2024, 2025, Rally de innovación 2025, JUDC 2023 y entusiasta de React, React Native, Flutter y Diseño UX/UI.
         </motion.p>
 
       {/*  <motion.a
