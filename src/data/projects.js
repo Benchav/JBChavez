@@ -110,6 +110,13 @@ const projects = [
       description: "Api diseñada en node.js en JavaScript, JWT token, roles y permisos, 13 modelos y su crud completo, protección de rutas y validaciones",
       image: "https://i.ibb.co/sJVvM3NM/api-constructora.jpg",
       link: "https://github.com/Benchav/Api_Constructora.git"
+    },
+    {
+      id: 17,
+      title: "Api insumos",
+      description: "Api diseñada en ASP.NET con estructura DDD completa hecha con C#",
+      image: "https://i.ibb.co/spp5QFQP/pasteleria-api.jpg",
+      link: "https://github.com/Benchav/Isumos.git"
     }
   ];
   
