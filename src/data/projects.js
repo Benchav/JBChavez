@@ -65,7 +65,7 @@ const projects = [
     {
       id: 10,
       title: "Tasko",
-      description: "App de gestiòn y organizaciòn de tareas usando React native js y fastapi python",
+      description: "App de productividad, gestiòn y organizaciòn de tareas usando React native js y fastapi python",
       image: "https://i.ibb.co/FLncfXVR/Home.jpg",
       link: "https://github.com/Benchav"
     }
