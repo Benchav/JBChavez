@@ -30,7 +30,7 @@ function About() {
             <h3>Mi Experiencia</h3>
             <p>
               Más de 2 años desarrollando aplicaciones web y móviles. 
-              He participado en proyectos desde la conceptualización hasta el despliegue final, 
+              He participado en proyectos tecnologicos como JUDC en 2023 creando un sistema de facturación con C#, Hackathon nicaragua en los años 2023, 2024 y 2025 con ideas innovadoras, Rally Tecnologico de Innovación 2025 con el sistema de gestión AgroControl, todos estos proyectos he estado desde la conceptualización hasta el despliegue final, 
               trabajando con metodologías ágiles y colaborando con equipos multidisciplinarios.
             </p>
           </motion.div>
@@ -62,7 +62,7 @@ function About() {
               <h4>Desarrollo Frontend</h4>
               <ul>
                 <li>React</li>
-                <li>JavaScript</li>
+                <li>Vite</li>
                 <li>HTML5/CSS3</li>
                 <li>Responsive Design</li>
               </ul>
@@ -72,7 +72,7 @@ function About() {
               <h4>Diseño UI/UX</h4>
               <ul>
                 <li>Axure RP</li>
-                <li>Prototipado</li>
+                <li>Figma</li>
                 <li>Design Systems</li>
                 <li>Interacciones</li>
               </ul>
@@ -83,8 +83,28 @@ function About() {
               <ul>
                 <li>React Native</li>
                 <li>Flutter</li>
-                <li>Performance</li>
-                <li>APIs REST</li>
+                <li>Androit Studio</li>
+              </ul>
+            </div>
+
+             <div className="skill-category">
+              <h4>Desarrollo Backend</h4>
+              <ul>
+                <li>Node.js</li>
+                <li>Fast api</li>
+                <li>ASP.NET</li>
+              </ul>
+            </div>
+
+               <div className="skill-category">
+              <h4>Lenguajes</h4>
+              <ul>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>Python</li>
+                <li>Dart</li>
+                <li>C#</li>
+                <li>C++</li>
               </ul>
             </div>
           </div>
