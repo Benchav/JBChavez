@@ -6,43 +6,64 @@ const projects = [
       image: "https://i.ibb.co/TNdb6MZ/Captura-de-pantalla-2025-11-12-150117.jpg",
       link: "https://rikiconstructora.vercel.app/"
     },
-    {
-      id: 1,
-      title: "Portafolio Web",
-      description: "Portafolio de Diseño grafico.",
-      image: "https://i.ibb.co/MybkdGj5/portafoliomario.png",
-      link: "https://portafoliomariosamuel.vercel.app/"
-    },
-    {
+        {
       id: 2,
+      title: "Gestión Zapatos",
+      description: "Sistema web aplicado a gestión de inventario, Casa matriz y sucursale",
+      image: "https://i.ibb.co/ksJX7Cff/payless.jpg",
+      link: "https://www.proyect.site/"
+    },
+            {
+      id: 3,
+      title: "AgroControl",
+      description: "Sistema web de gestión y control en huertos verticales y Horizontales",
+      image: "https://i.ibb.co/hRd652W0/agro-Control.jpg",
+      link: "https://agrocontrol-tan.vercel.app/"
+    },
+       {
+      id: 4,
+      title: "Nicapages",
+      description: "Web empresarial nicapages usando react + vite y node.js.",
+      image: "https://i.ibb.co/mC5sNV5g/nicpages.png",
+      link: "https://www.nicapages.site/"
+    },
+     {
+      id: 5,
       title: "Web abogados",
-      description: "Web de Abogados React y Firebase.",
-      image: "https://i.ibb.co/rGs4VYS9/servicioabogados.png",
-      link: "https://servicioabogados.vercel.app/"
+      description: "Pagina web corporativa para abogado institucional",
+      image: "https://i.ibb.co/MxGQQvMN/web-veritas.jpg",
+      link: "https://www.veritasabogado.com/"
+    },
+        {
+      id: 6,
+      title: "ETNS Scholl",
+      description: "Web corporativa para la academia de ingles ETNS en san marcos",
+      image: "https://i.ibb.co/67cXgBCD/ETNSSchool.jpg",
+      link: "https://www.etnschool.com/"
     },
     {
-      id: 3,
+      id: 7,
       title: "Cutler Gym",
       description: "Web para gimnasio Cutler fitness gym usando React + vite y Node.js.",
       image: "https://i.ibb.co/Q7HmPjzj/cutler.png",
       link: "https://cutlergym.vercel.app/"
     },
+        {
+      id: 8,
+      title: "Portafolio Web",
+      description: "Portafolio de Diseño grafico.",
+      image: "https://i.ibb.co/MybkdGj5/portafoliomario.png",
+      link: "https://portafoliomariosamuel.vercel.app/"
+    },
       {
-      id: 4,
+      id: 9,
       title: "Fast-api",
       description: "Fast api en python para enviar correos con resend.",
       image: "https://i.ibb.co/KcqPG7nd/fastapi.png",
       link: "https://emailapijb.vercel.app/"
     },
     {
-      id: 5,
-      title: "Nicapages",
-      description: "Web empresarial nicapages usando react + vite y node.js.",
-      image: "https://i.ibb.co/mC5sNV5g/nicpages.png",
-      link: "https://www.nicapages.site/"
-    },
-    {
-      id: 6,
+      id: 10,
       title: "Tasko",
       description: "App de gestiòn y organizaciòn de tareas usando React native js y fastapi python",
       image: "https://i.ibb.co/FLncfXVR/Home.jpg",
