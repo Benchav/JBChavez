@@ -46,16 +46,16 @@ function Home() {
           <br />Participante en Hackathon Nicaragua y entusiasta de React, React Native, Flutter y Diseño UX/UI.
         </motion.p>
 
-        <motion.a
+      {/*  <motion.a
           href="https://joshuachavez.vercel.app/"
           className="cv-button"
           download
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span className="button-text">Descargar CV</span>
-          <span className="button-icon">↓</span>
-        </motion.a>
+       {/*   <span className="button-text">Descargar CV</span> }
+       {   <span className="button-icon">↓</span> }
+        </motion.a> */}
       </div>
     </section>
   );
