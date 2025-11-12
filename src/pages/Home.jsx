@@ -33,7 +33,7 @@ function Home() {
           transition={{ delay: 0.2 }}
           className="subtitle"
         >
-          Desarrollador Frontend
+          Desarrollador JR
         </motion.h2>
 
         <motion.p
