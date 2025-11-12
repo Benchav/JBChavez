@@ -25,7 +25,6 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-    // Always treat as success regardless of response
     try {
       const payload = new FormData();
       payload.append('name', formData.nombre);

@@ -75,6 +75,13 @@ const projects = [
       description: "Apliación de compra de productos pasteles, carrito de compras, compra, inventario usando Flutter y Api en C#",
       image: "https://i.ibb.co/TDq2QfjQ/insbarrera.jpg",
       link: "https://github.com/Benchav/APP_InsBarrera.git"
+    },
+        {
+      id: 11,
+      title: "fast tasko",
+      description: "fast api de la apliación tasko, usando python, crud completo y autenticación base de datos en firebase",
+      image: "https://i.ibb.co/zhNhsnHP/fasttasko.jpg",
+      link: "https://fasfttasko.vercel.app/docs#/"
     }
   ];
   
