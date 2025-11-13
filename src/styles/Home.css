@@ -1,38 +1,69 @@
-/* 🔧 Estilos globales */
-* {
-  box-sizing: border-box;
+/* 🔧 Estilos globales (mantenidos) */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
+
+/* --- NUEVO: Orbes de fondo --- */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: #64ffda; /* Color acento */
+  top: 10%;
+  left: 15%;
+}
+.orb-2 {
+  width: 350px;
+  height: 350px;
+  background: #3a86ff; /* Un segundo color */
+  bottom: 10%;
+  right: 15%;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  width: 100%;
-}
-
-
+/* --- HOME: Layout de 2 columnas --- */
 .home {
   display: flex;
-  justify-content: center;
+  flex-direction: row; /* Cambio a fila */
+  justify-content: space-between; /* Espacio entre texto e imagen */
   align-items: center;
   min-height: 100vh;
-  padding: 2rem 1rem;
-  background: linear-gradient(45deg, #0a192f, #172a45);
+  padding: 6rem 10% 2rem; /* Más padding lateral */
+  background: #0a192f; /* Fondo base sólido */
   color: #ccd6f6;
-  overflow-x: hidden;
+  overflow: hidden; /* Importante para los orbes */
+  position: relative; /* Para los orbes y sociales */
 }
 
-.home-content {
-  max-width: 800px;
-  text-align: center;
-  padding: 0 1.5rem;
+/* Contenedor de texto (columna izquierda) */
+.home-text-content {
+  flex: 1; /* Ocupa el espacio disponible */
+  max-width: 650px;
+  text-align: left; /* Alineado a la izquierda */
+  z-index: 2;
 }
 
+/* Contenedor de imagen (columna derecha) */
 .img-container {
   position: relative;
-  margin: 0 auto 1.5rem;
-  width: min(200px, 40vw);
-  height: min(200px, 40vw);
+  flex-shrink: 0; /* Evita que se encoja */
+  margin-left: 3rem;
+  width: min(350px, 100%); /* Tamaño máximo */
+  height: min(350px, 100%);
+  animation: float 6s ease-in-out infinite; /* Animación de flotar */
+  z-index: 1;
+}
+
+/* --- NUEVO: Animación de flotar --- */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
 }
 
 .profile-img {
@@ -40,16 +71,17 @@ html, body {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #64ffda;
-  box-shadow: 0 10px 30px -10px rgba(100, 255, 218, 0.2);
+  border: 4px solid #64ffda; /* Borde más grueso */
+  box-shadow: 0 10px 40px -10px rgba(100, 255, 218, 0.3);
 }
 
+/* --- Títulos y Texto --- */
 .title {
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
-  margin: 0.5rem 0;
-  line-height: 1.2;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  font-size: clamp(2.5rem, 6vw, 4.5rem); /* Más grande */
+  margin: 0;
+  line-height: 1.1;
+  font-weight: 700; /* Más peso */
+  letter-spacing: -1px;
 }
 
 .name-highlight {
@@ -58,129 +90,181 @@ html, body {
   display: inline-block;
 }
 
+/* Subrayado animado en HOVER */
 .name-highlight::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: 0px;
   left: 0;
-  width: 100%;
-  height: 2px;
+  width: 0%; /* Inicia en 0 */
+  height: 4px;
   background: #64ffda;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: width 0.3s ease-out; /* Anima el ancho */
+}
+.name-highlight:hover::after {
+  width: 100%; /* Se expande en hover */
 }
 
 .subtitle {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   color: #8892b0;
-  margin: 0.5rem 0 1.5rem;
+  margin: 1rem 0 1.5rem;
   font-weight: 400;
 }
 
+/* --- NUEVO: Cursor parpadeante --- */
+.cursor {
+  color: #64ffda;
+  font-weight: 700;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 .description {
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   line-height: 1.6;
-  max-width: 90%;
-  margin: 1.5rem auto;
-  padding: 0 1rem;
+  max-width: 600px;
+  margin: 1.5rem 0 2.5rem; /* Margen a la izquierda 0 */
+  padding: 0;
   color: #8892b0;
 }
 
-.cv-button {
+/* --- NUEVO: Contenedor de Botones CTA --- */
+.cta-container {
+  display: flex;
+  flex-wrap: wrap; /* Para que se apilen en móvil si no caben */
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Estilo base de botón */
+.cta-button {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: transparent;
-  color: #64ffda;
-  padding: clamp(0.8rem, 2.5vw, 1rem) clamp(1.5rem, 4vw, 2rem);
-  border: 2px solid #64ffda;
-  border-radius: 4px;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.75rem;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  cursor: pointer;
+  font-size: 1rem;
+  border: 2px solid #64ffda;
 }
 
-.cv-button:hover {
+/* Botón Primario (Relleno) */
+.cta-primary {
+  background: #64ffda;
+  color: #0a192f;
+  box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+}
+.cta-primary:hover {
+  background: #52d6c0;
+  border-color: #52d6c0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3);
+}
+
+/* Botón Secundario (Borde) */
+.cta-secondary {
+  background: transparent;
+  color: #64ffda;
+}
+.cta-secondary:hover {
   background: rgba(100, 255, 218, 0.1);
+  transform: translateY(-2px);
 }
 
-.cv-button::before {
-  content: '';
+/* --- NUEVO: Barra Social Vertical --- */
+.home-socials {
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(100, 255, 218, 0.2),
-    transparent
-  );
-  transition: 0.5s;
+  bottom: 5rem;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  z-index: 2;
 }
 
-.cv-button:hover::before {
-  left: 100%;
+/* Línea decorativa */
+.home-socials::after {
+  content: '';
+  width: 2px;
+  height: 80px;
+  background: #233554;
+  margin-top: 0.5rem;
 }
 
-.button-icon {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
-  transition: transform 0.3s ease;
+/* Sobreescribimos estilos de SocialLinks */
+.home-socials .social-links {
+  flex-direction: column;
+  padding: 0;
+  gap: 1.5rem;
+}
+.home-socials .social-link {
+  font-size: 1.5rem;
+}
+.home-socials .social-link::after {
+  display: none; /* Quitamos el subrayado */
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
+/* --- Media Queries --- */
+@media (max-width: 900px) {
   .home {
-    padding: 2rem 1rem;
+    flex-direction: column; /* Cambia a columna */
+    justify-content: center;
+    padding: 6rem 5% 4rem;
+    min-height: 100vh;
+  }
+  
+  .home-text-content {
+    order: 2; /* Texto abajo */
+    text-align: center; /* Texto centrado */
+    max-width: 100%;
+    margin-top: 2rem;
   }
   
   .description {
-    max-width: 100%;
-    padding: 0;
+    margin: 1.5rem auto 2.5rem; /* Centramos la descripción */
+    max-width: 90%;
+  }
+
+  .img-container {
+    order: 1; /* Imagen arriba */
+    margin: 0;
+    width: min(200px, 50vw);
+    height: min(200px, 50vw);
+    animation: none; /* Quitamos la flotación en móvil */
+  }
+  
+  .cta-container {
+    justify-content: center; /* Centramos los botones */
+  }
+
+  /* Ocultamos la barra social en móvil para un look más limpio */
+  .home-socials {
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
   .home {
-    padding: 1.5rem 0.5rem;
-    min-height: 90vh;
+    padding-top: 5rem;
   }
-  
-  .home-content {
-    padding: 0;
-  }
-  
-  .cv-button {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-  }
-  
-  .img-container {
-    margin-bottom: 1rem;
-  }
-}
-
-@media (max-width: 320px) {
   .title {
-    font-size: 1.6rem;
-    line-height: 1.1;
+    font-size: 2.2rem;
   }
-  
   .subtitle {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
-  
-  .description {
-    font-size: 0.85rem;
-  }
-  
-  .cv-button {
-    padding: 0.8rem 1.2rem;
+  .cta-button {
+    width: 100%; /* Botones ocupan todo el ancho */
+    font-size: 0.9rem;
+    padding: 0.9rem 1rem;
   }
 }
-
