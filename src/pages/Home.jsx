@@ -53,7 +53,7 @@ function Home() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-       {/*   <span className="button-text">Descargar CV</span> }
+          <span className="button-text">Descargar CV</span> 
        {   <span className="button-icon">↓</span> }
         </motion.a> */}
       </div>

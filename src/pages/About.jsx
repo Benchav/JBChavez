@@ -4,9 +4,8 @@ import { motion } from 'framer-motion';
 import { 
   FaReact, FaNodeJs, FaPython, FaFigma, FaJs, 
   FaHtml5, FaCss3Alt, FaMobileAlt, FaDatabase, FaCodeBranch,
-  FaCode // <-- ÍCONO AÑADIDO
+  FaCode
 } from 'react-icons/fa';
-// 'SiCsharp' HA SIDO ELIMINADO DE LA LÍNEA SIGUIENTE
 import { SiVite, SiFlutter, SiTypescript, SiDart } from 'react-icons/si';
 import { TbBrandReactNative } from "react-icons/tb";
 import '../styles/About.css';
@@ -19,31 +18,54 @@ const SkillItem = ({ icon, name }) => (
   </div>
 );
 
+// --- NUEVO: Variantes para animaciones escalonadas ---
+const gridVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15, // Cada hijo aparecerá 0.15s después
+    }
+  }
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.4 }
+  }
+};
+// ---------------------------------------------------
+
+
 function About() {
   return (
     <section id="about" className="about-section">
       <motion.div 
         className="about-content"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        initial="hidden" // Usamos los estados de las variantes
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }} // Se activa al ver el 20%
       >
         <motion.h2 
           className="section-title"
-          initial={{ y: 20 }}
-          whileInView={{ y: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           Sobre Mí
         </motion.h2>
 
-        {/* Sección de Experiencia y Objetivo (mantenida) */}
-        <div className="about-grid">
+        {/* Sección de Experiencia y Objetivo (Animada) */}
+        <motion.div 
+          className="about-grid"
+          variants={gridVariants} // Aplicamos las variantes de la grilla
+        >
           <motion.div 
             className="about-card"
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            variants={cardVariants} // Aplicamos las variantes de tarjeta
           >
             <h3>Mi Experiencia</h3>
             <p>
@@ -55,9 +77,7 @@ function About() {
 
           <motion.div 
             className="about-card"
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            variants={cardVariants} // Aplicamos las variantes de tarjeta
           >
             <h3>Mi Objetivo</h3>
             <p>
@@ -66,19 +86,28 @@ function About() {
               crecer como desarrollador y contribuir a proyectos innovadores.
             </p>
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Sección de Habilidades (Rediseñada) */}
-        <motion.div 
-          className="skills-container"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          <h3>Mis Herramientas y Fortalezas</h3>
-          <div className="skills-grid-new">
+        <div className="skills-container"> {/* Quitamos la animación de este div */}
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+          >
+            Mis Herramientas y Fortalezas
+          </motion.h3>
+          
+          <motion.div 
+            className="skills-grid-new"
+            variants={gridVariants} // Aplicamos las variantes de grilla
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             
-            <div className="skill-category-card">
+            <motion.div className="skill-category-card" variants={cardVariants}>
               <h4>Frontend</h4>
               <div className="skills-icons-grid">
                 <SkillItem icon={<FaReact />} name="React" />
@@ -88,20 +117,19 @@ function About() {
                 <SkillItem icon={<FaJs />} name="JavaScript" />
                 <SkillItem icon={<SiTypescript />} name="TypeScript" />
               </div>
-            </div>
+            </motion.div>
 
-            <div className="skill-category-card">
+            <motion.div className="skill-category-card" variants={cardVariants}>
               <h4>Backend</h4>
               <div className="skills-icons-grid">
                 <SkillItem icon={<FaNodeJs />} name="Node.js" />
                 <SkillItem icon={<FaPython />} name="Python" />
                 <SkillItem icon={<FaDatabase />} name="FastAPI" />
-                {/* ÍCONO CAMBIADO AQUÍ */}
                 <SkillItem icon={<FaCode />} name="C# / ASP.NET" />
               </div>
-            </div>
+            </motion.div>
             
-            <div className="skill-category-card">
+            <motion.div className="skill-category-card" variants={cardVariants}>
               <h4>Mobile</h4>
               <div className="skills-icons-grid">
                 <SkillItem icon={<TbBrandReactNative />} name="React Native" />
@@ -109,19 +137,18 @@ function About() {
                 <SkillItem icon={<SiDart />} name="Dart" />
                 <SkillItem icon={<FaMobileAlt />} name="Android Studio" />
               </div>
-            </div>
+            </motion.div>
 
-            <div className="skill-category-card">
+            <motion.div className="skill-category-card" variants={cardVariants}>
               <h4>Diseño UI/UX</h4>
-              {/* ESTA ES LA PARTE QUE SE CORTÓ */}
               <div className="skills-icons-grid">
                 <SkillItem icon={<FaFigma />} name="Figma" />
                 <SkillItem icon={<FaCodeBranch />} name="Axure RP" />
               </div>
-            </div>
+            </motion.div>
 
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </motion.div>
     </section>
   );
