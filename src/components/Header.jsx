@@ -34,8 +34,8 @@ function Header() {
 
   const navItems = [
     { id: 'home', label: 'Inicio' },
-    { id: 'about', label: 'Sobre_Mi' },
     { id: 'projects', label: 'Proyectos' },
+        { id: 'about', label: 'Sobre Mi' },
     { id: 'contact', label: 'Contacto' }
   ];
 
