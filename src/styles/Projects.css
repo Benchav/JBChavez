@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-/* ---------------------- Título principal ---------------------- */
+
 .section-title {
   color: #ccd6f6;
   font-size: 2.5rem;
@@ -28,21 +28,21 @@
   border-radius: 2px;
 }
 
-/* ---------------------- NUEVO: Títulos de categoría ---------------------- */
+
 .projects-category-title {
-  color: #64ffda; /* Color de acento */
+  color: #64ffda; 
   font-size: 2rem;
-  margin-top: 5rem; /* Más espacio entre categorías */
+  margin-top: 5rem; 
   margin-bottom: 2.5rem;
   width: 100%;
   max-width: 1200px;
   text-align: left;
   padding: 0 2%;
-  border-bottom: 1px solid #233554; /* Línea sutil */
+  border-bottom: 1px solid #233554; 
   padding-bottom: 0.5rem;
 }
 
-/* ---------------------- Grid de proyectos ---------------------- */
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -52,7 +52,7 @@
   padding: 0 2%;
 }
 
-/* ---------------------- Media Queries ---------------------- */
+
 @media (max-width: 768px) {
   .projects-section {
     padding: 4rem 5%;
