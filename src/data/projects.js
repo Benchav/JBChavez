@@ -30,7 +30,7 @@ const projects = [
       id: 4,
       title: "Nicapages",
       description: "Web empresarial nicapages usando react + vite y node.js.",
-      image: "https://i.ibb.co/mC5sNV5g/nicpages.png",
+      image: "https://i.ibb.co/Fbxx6dJY/nicapages.jpg",
       link: "https://www.nicapages.site/",
       category: "frontend",
       technologies: ["React", "Vite", "tailwind css"]
