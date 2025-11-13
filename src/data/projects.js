@@ -125,6 +125,15 @@ const projects = [
       category: "backend",
       technologies: ["Node.js", "JWT", "MongoDB"]
     },
+     {
+      id: 16,
+      title: "Avicon Api",
+      description: "Api diseñada en node.js en JavaScript, JWT token, roles y permisos para la gestión avicola,",
+      image: "https://i.ibb.co/b0xKDSp/aviconapi.png",
+      link: "https://github.com/Benchav/avicon-api.git",
+      category: "backend",
+      technologies: ["Node.js","TypeScript", "JWT", "sql"]
+    },
     {
       id: 17,
       title: "Api insumos",
