@@ -23,9 +23,12 @@ function ProjectCard({ title, description, technologies, image, link }) {
       <div className="project-content">
         <h3 className="project-title">{title}</h3>
         <p className="project-description">{description}</p>
-        <p className="project-technologies">
-          <strong>Tecnologías</strong> {technologies}
-        </p>
+        
+        <div className="project-technologies">
+          {technologies && technologies.map((tech, index) => (
+            <span key={index} className="tech-pill">{tech}</span>
+          ))}
+        </div>
         
         <motion.a
           href={link}
