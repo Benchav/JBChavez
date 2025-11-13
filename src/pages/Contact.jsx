@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+
+import { 
+  FaUser, FaEnvelope, FaPencilAlt, FaPaperPlane, 
+  FaUpload, FaSpinner, FaCheckCircle, FaRedo 
+} from 'react-icons/fa';
 import '../styles/Contact.css';
 
 const Contact = () => {
@@ -9,7 +14,7 @@ const Contact = () => {
     message: '',
     file: null,
     to: 'joshua44benja@gmail.com',
-    redirect_to: 'https://tu-dominio.com/gracias.html'
+    redirect_to: 'https://tu-dominio.com/gracias.html' 
   });
   const [status, setStatus] = useState('idle');
 
@@ -48,8 +53,12 @@ const Contact = () => {
   const handleReset = () => {
     setFormData({ nombre: '', email: '', message: '', file: null, to: formData.to, redirect_to: formData.redirect_to });
     setStatus('idle');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const inputVariant = (delay = 0) => ({
+    hidden: { x: -20, opacity: 0 },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.4, delay } }
+  });
 
   return (
     <section id="contact" className="contact-section">
@@ -62,9 +71,19 @@ const Contact = () => {
       >Contáctame</motion.h2>
 
       {status === 'success' ? (
-        <motion.div className="success-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-          <p className="success-message">¡Gracias por tu mensaje! Te responderé pronto 😊</p>
-          <button className="reset-button" onClick={handleReset}>Enviar otro mensaje</button>
+        <motion.div 
+          className="success-container" 
+          initial={{ opacity: 0, scale: 0.9 }} 
+          animate={{ opacity: 1, scale: 1 }} 
+          transition={{ duration: 0.5 }}
+        >
+          <p className="success-message">
+            <FaCheckCircle /> 
+            ¡Gracias por tu mensaje! Te responderé pronto 😊
+          </p>
+          <button className="reset-button" onClick={handleReset}>
+            <FaRedo /> <span>Enviar otro mensaje</span>
+          </button>
         </motion.div>
       ) : (
         <motion.form
@@ -75,25 +94,83 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <motion.div className="input-group" initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.4 }}>
-            <input type="text" name="nombre" placeholder="Tu nombre" required className="form-input" value={formData.nombre} onChange={handleChange} />
+          {/* Campo Nombre con Etiqueta Flotante */}
+          <motion.div className="input-group" variants={inputVariant(0)} initial="hidden" whileInView="visible">
+            <FaUser className="input-icon" />
+            <input 
+              type="text" 
+              name="nombre" 
+              id="nombre" 
+              required 
+              className="form-input" 
+              value={formData.nombre} 
+              onChange={handleChange} 
+              placeholder=" " 
+            />
+            <label htmlFor="nombre" className="form-label">Tu nombre</label>
           </motion.div>
 
-          <motion.div className="input-group" initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.1 }}>
-            <input type="email" name="email" placeholder="Tu correo" required className="form-input" value={formData.email} onChange={handleChange} />
+          {/* Campo Email con Etiqueta Flotante */}
+          <motion.div className="input-group" variants={inputVariant(0.1)} initial="hidden" whileInView="visible">
+            <FaEnvelope className="input-icon" />
+            <input 
+              type="email" 
+              name="email" 
+              id="email" 
+              required 
+              className="form-input" 
+              value={formData.email} 
+              onChange={handleChange} 
+              placeholder=" "
+            />
+            <label htmlFor="email" className="form-label">Tu correo</label>
           </motion.div>
 
-          <motion.div className="input-group" initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
-            <textarea name="message" rows="5" placeholder="Escribe tu mensaje" required className="form-textarea" value={formData.message} onChange={handleChange} />
+          {/* Campo Mensaje con Etiqueta Flotante */}
+          <motion.div className="input-group" variants={inputVariant(0.2)} initial="hidden" whileInView="visible">
+            <FaPencilAlt className="input-icon textarea-icon" />
+            <textarea 
+              name="message" 
+              id="message" 
+              rows="5" 
+              required 
+              className="form-textarea" 
+              value={formData.message} 
+              onChange={handleChange} 
+              placeholder=" "
+            />
+            <label htmlFor="message" className="form-label">Escribe tu mensaje</label>
           </motion.div>
 
-          <motion.div className="input-group" initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }}>
-            <label className="form-label">Adjuntar documento (opcional):</label>
-            <input type="file" name="file" className="form-input" onChange={handleChange} />
+          {/* Campo de Archivo Personalizado */}
+          <motion.div className="input-group" variants={inputVariant(0.3)} initial="hidden" whileInView="visible">
+            <label htmlFor="file-upload" className="file-upload-label">
+              <FaUpload />
+              <span>{formData.file ? formData.file.name : "Adjuntar documento (opcional)"}</span>
+            </label>
+            <input 
+              type="file" 
+              name="file" 
+              id="file-upload" 
+              className="form-input-file" 
+              onChange={handleChange} 
+            />
           </motion.div>
 
-          <motion.button type="submit" className="submit-btn" disabled={status === 'sending'} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            {status === 'sending' ? 'Enviando...' : 'Enviar Mensaje'}
+          {/* Botón de Envío con Icono */}
+          <motion.button 
+            type="submit" 
+            className="submit-btn" 
+            disabled={status === 'sending'} 
+            whileHover={{ scale: 1.05 }} 
+            whileTap={{ scale: 0.95 }}
+          >
+            {status === 'sending' ? (
+              <FaSpinner className="spin-icon" />
+            ) : (
+              <FaPaperPlane />
+            )}
+            <span>{status === 'sending' ? 'Enviando...' : 'Enviar Mensaje'}</span>
           </motion.button>
         </motion.form>
       )}
