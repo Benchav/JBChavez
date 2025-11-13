@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import SocialLinks from '../components/SocialLinks'; // 1. Importar SocialLinks
-import { FaArrowRight, FaDownload } from 'react-icons/fa'; // 2. Importar íconos
-import JoshuaCV from '../assets/pdf/joshuaCV.pdf'; // 3. Importar tu CV
+import SocialLinks from '../components/SocialLinks'; 
+import { FaArrowRight, FaDownload } from 'react-icons/fa'; 
+import JoshuaCV from '../assets/pdf/joshuaCV.pdf'; 
 import '../styles/Home.css';
 
-// 4. Función para hacer scroll (copiada de tu Header.jsx)
+
 const scrollToSection = (id) => {
   const section = document.getElementById(id);
   const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
@@ -87,16 +87,16 @@ function Home() {
             <FaArrowRight />
           </motion.button>
           
-      {/*    <motion.a
-            href={JoshuaCV} // Usamos el CV importado
+          <motion.a
+            href={JoshuaCV} 
             className="cta-button cta-secondary"
-            download="JoshuaChavez-CV.pdf" // Nombre del archivo al descargar
+            download="JoshuaChavezCV.pdf" 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <span>Descargar CV</span> 
             <FaDownload />
-          </motion.a>  */}
+          </motion.a>  
         </motion.div>
       </motion.div>
 
