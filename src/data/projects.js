@@ -63,15 +63,6 @@ const projects = [
       technologies: ["React", "Vite", "tailwind css"]
     },
     {
-      id: 8,
-      title: "Portafolio Web",
-      description: "Portafolio de Diseño grafico.",
-      image: "https://i.ibb.co/MybkdGj5/portafoliomario.png",
-      link: "https://portafoliomariosamuel.vercel.app/",
-      category: "frontend",
-      technologies: ["HTML5", "CSS"]
-    },
-    {
       id: 10,
       title: "Edu-Incluye",
       description: "Aplicación web para estudio y aprendisaje del lenguaje de señas Nicaraguense",
