@@ -70,6 +70,14 @@ const projects = [
       link: "https://edu-incluye.vercel.app/",
       category: "frontend",
       technologies: ["React", "Vite","tailwind css"]
+    },  {
+      id: 18,
+      title: "Avicon",
+      description: "Gestor avicola, producción, cuidados y alimentación de aves de corral",
+      image: "https://i.ibb.co/XkYyqqKS/avicon.jpg",
+      link: "https://avicon.nicapages.site/",
+      category: "frontend",
+      technologies: ["React", "Vite","tailwind css", "TypeScript", "node.js", "sql"]
     },
     // --- Backend ---
     {
