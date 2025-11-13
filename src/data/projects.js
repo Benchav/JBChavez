@@ -6,7 +6,7 @@ const projects = [
       image: "https://i.ibb.co/TNdb6MZ/Captura-de-pantalla-2025-11-12-150117.jpg",
       link: "https://rikiconstructora.vercel.app/",
       category: "frontend",
-      technologies: ["React", "Vite", "Node.js"]
+      technologies: ["React", "Vite", "tailwind css", "TypeScript","Node.js", "JavaScript"]
     },
     {
       id: 2,
@@ -15,7 +15,7 @@ const projects = [
       image: "https://i.ibb.co/ksJX7Cff/payless.jpg",
       link: "https://www.proyect.site/",
       category: "frontend",
-      technologies: ["React", "Node.js", "Gestión"]
+      technologies: ["HTML5", "CSS", "Node.js", "JavaScript"]
     },
     {
       id: 3,
@@ -24,7 +24,7 @@ const projects = [
       image: "https://i.ibb.co/hRd652W0/agro-Control.jpg",
       link: "https://agrocontrol-tan.vercel.app/",
       category: "frontend",
-      technologies: ["React", "Vite"]
+      technologies: ["React", "Vite", "tailwind css", "node.js", "sqlite"]
     },
     {
       id: 4,
@@ -33,7 +33,7 @@ const projects = [
       image: "https://i.ibb.co/mC5sNV5g/nicpages.png",
       link: "https://www.nicapages.site/",
       category: "frontend",
-      technologies: ["React", "Vite", "Node.js"]
+      technologies: ["React", "Vite", "tailwind css"]
     },
      {
       id: 5,
@@ -42,7 +42,7 @@ const projects = [
       image: "https://i.ibb.co/MxGQQvMN/web-veritas.jpg",
       link: "https://www.veritasabogado.com/",
       category: "frontend",
-      technologies: ["React", "Vite", "Corporativo"]
+      technologies: ["React", "Vite", "tailwind css"]
     },
     {
       id: 6,
@@ -51,7 +51,7 @@ const projects = [
       image: "https://i.ibb.co/67cXgBCD/ETNSSchool.jpg",
       link: "https://www.etnschool.com/",
       category: "frontend",
-      technologies: ["React", "Vite"]
+      technologies: ["React", "Vite", "tailwind css", "Services plugin"]
     },
     {
       id: 7,
@@ -60,7 +60,7 @@ const projects = [
       image: "https://i.ibb.co/Q7HmPjzj/cutler.png",
       link: "https://cutlergym.vercel.app/",
       category: "frontend",
-      technologies: ["React", "Vite", "Node.js"]
+      technologies: ["React", "Vite", "tailwind css"]
     },
     {
       id: 8,
@@ -69,7 +69,7 @@ const projects = [
       image: "https://i.ibb.co/MybkdGj5/portafoliomario.png",
       link: "https://portafoliomariosamuel.vercel.app/",
       category: "frontend",
-      technologies: ["React", "Diseño"]
+      technologies: ["HTML5", "CSS"]
     },
     {
       id: 10,
@@ -78,7 +78,7 @@ const projects = [
       image: "https://i.ibb.co/8LTqs8x5/Edu-Incluye.jpg",
       link: "https://edu-incluye.vercel.app/",
       category: "frontend",
-      technologies: ["React", "Vite", "Educativo"]
+      technologies: ["React", "Vite","tailwind css"]
     },
     // --- Backend ---
     {
@@ -88,7 +88,7 @@ const projects = [
       image: "https://i.ibb.co/KcqPG7nd/fastapi.png",
       link: "https://emailapijb.vercel.app/",
       category: "backend",
-      technologies: ["Python", "FastAPI", "Resend"]
+      technologies: ["HTML5", "Css", "Python", "FastApi"]
     },
     {
       id: 13,
@@ -106,7 +106,7 @@ const projects = [
       image: "https://i.ibb.co/hJnnY9GL/api-insumosbarrera.jpg",
       link: "https://github.com/Benchav/APIRestInsumos.git",
       category: "backend",
-      technologies: ["C#", "ASP.NET", "API Rest"]
+      technologies: ["C#", "ASP.NET", "API Rest", "Sql"]
     },
     {
       id: 15,
@@ -115,7 +115,7 @@ const projects = [
       image: "https://i.ibb.co/Pkr2dX1/payless-api.jpg",
       link: "https://github.com/Benchav/Payless-Api.git",
       category: "backend",
-      technologies: ["Node.js", "JavaScript", "JWT"]
+      technologies: ["Node.js", "JavaScript", "JWT", "Firebase"]
     },
     {
       id: 16,
@@ -133,7 +133,7 @@ const projects = [
       image: "https://i.ibb.co/spp5QFQP/pasteleria-api.jpg",
       link: "https://github.com/Benchav/Isumos.git",
       category: "backend",
-      technologies: ["C#", "ASP.NET", "DDD"]
+      technologies: ["C#", "ASP.NET", "DDD", "Sql"]
     },
     // --- Mobile ---
     {
@@ -143,7 +143,7 @@ const projects = [
       image: "https://i.ibb.co/FLncfXVR/Home.jpg",
       link: "https://github.com/Benchav",
       category: "mobile",
-      technologies: ["React Native", "FastAPI", "Python"]
+      technologies: ["React Native", "FastAPI", "Python", "Firebase"]
     },
     {
       id: 12,
@@ -152,7 +152,7 @@ const projects = [
       image: "https://i.ibb.co/TDq2QfjQ/insbarrera.jpg",
       link: "https://github.com/Benchav/APP_InsBarrera.git",
       category: "mobile",
-      technologies: ["Flutter", "Dart", "C# API"]
+      technologies: ["Flutter", "Dart", "C# API", "Sql"]
     }
   ];
   
