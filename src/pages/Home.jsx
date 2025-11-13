@@ -100,7 +100,7 @@ function Home() {
         </motion.div>
       </motion.div>
 
-      {/* 11. Contenedor de imagen (columna derecha) */}
+    
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}

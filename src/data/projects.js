@@ -2,7 +2,7 @@ const projects = [
     {
       id: 1,
       title: "Constructora",
-      description: "Sistema web completo aplicado a constructoras",
+      description: "Sistema web completo aplicado a constructoras, puede ingresar con credenciales: ceo y contraseña: 123, por fines demostrativos del sofware",
       image: "https://i.ibb.co/TNdb6MZ/Captura-de-pantalla-2025-11-12-150117.jpg",
       link: "https://rikiconstructora.vercel.app/",
       category: "frontend",
@@ -11,7 +11,7 @@ const projects = [
     {
       id: 2,
       title: "Gestión Zapatos",
-      description: "Sistema web aplicado a gestión de inventario, Casa matriz y sucursale, Dominio y subdominios",
+      description: "Sistema web aplicado a gestión de inventario, Casa matriz y sucursale, Dominio y subdominios, Puede ingresar con credenciales managua, contraseña: 123456, por fines demostrativos del software",
       image: "https://i.ibb.co/ksJX7Cff/payless.jpg",
       link: "https://www.proyect.site/",
       category: "frontend",
