@@ -10,18 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* === Paleta de Colores (Basada en tu project-card.css) === */
+    
         :root {
             --bg-dark: #0a192f;
             --bg-light: #112240;
             --bg-accent: #233554;
             --text-main: #ccd6f6;
-            --text-muted: #a8b2d1; /* Tomado de .project-description */
+            --text-muted: #a8b2d1; 
             --accent: #64ffda;
             --accent-glass: rgba(100, 255, 218, 0.1);
             --accent-glass-border: rgba(100, 255, 218, 0.4);
-            --accent-shadow: rgba(100, 255, 218, 0.15); /* Tomado de .project-card:hover */
-            --dark-shadow: rgba(0, 0, 0, 0.3); /* Tomado de .project-card */
+            --accent-shadow: rgba(100, 255, 218, 0.15); 
+            --dark-shadow: rgba(0, 0, 0, 0.3); 
         }
 
         html {
@@ -37,12 +37,12 @@
             max-width: 1000px;
         }
 
-        /* === Animación de Carga (al hacer scroll) === */
+       
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            /* Usamos una variable CSS para el retraso */
+           
             transition-delay: var(--delay, 0s); 
         }
         .animate-on-scroll.is-visible {
@@ -50,7 +50,6 @@
             transform: translateY(0);
         }
 
-        /* === Texto de Encabezado con Gradiente y Animación === */
         @keyframes gradient-pulse {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -66,15 +65,14 @@
             animation: gradient-pulse 4s ease infinite;
         }
 
-        /* === Contenedor Principal (Estilo Project-Card) === */
         .main-container {
             background: var(--bg-light);
-            border-radius: 14px; /* Tomado de .project-card */
+            border-radius: 14px; 
             border: 1px solid var(--bg-accent);
-            box-shadow: 0 6px 16px var(--dark-shadow); /* Tomado de .project-card */
+            box-shadow: 0 6px 16px var(--dark-shadow); 
         }
 
-        /* === Títulos de Sección con Icono === */
+    
         .section-title {
             color: var(--accent);
             font-size: 1.25rem;
@@ -92,14 +90,14 @@
             height: 20px;
         }
 
-        /* === Píldoras de Habilidad (Estilo "Glassmorphism" de tech-pill) === */
+     
         .skill-pill {
             display: inline-block;
             background: var(--accent-glass);
             color: var(--accent);
-            padding: 0.25rem 0.65rem; /* Tomado de .tech-pill */
-            border-radius: 6px; /* Tomado de .tech-pill */
-            font-size: 0.75rem; /* Tomado de .tech-pill */
+            padding: 0.25rem 0.65rem; 
+            border-radius: 6px; 
+            font-size: 0.75rem; 
             font-weight: 500;
             letter-spacing: 0.3px;
             border: 1px solid var(--accent-glass-border);
@@ -111,26 +109,26 @@
             background: var(--accent);
             color: var(--bg-dark);
             border-color: var(--accent);
-            transform: translateY(-3px); /* Ajustado para más "pop" */
-            box-shadow: 0 0 10px rgba(100, 255, 218, 0.4); /* Tomado de .tech-pill:hover */
+            transform: translateY(-3px); 
+            box-shadow: 0 0 10px rgba(100, 255, 218, 0.4); 
         }
 
-        /* === Línea de Tiempo (Timeline) Interactiva === */
+     
         .timeline {
             position: relative;
             border-left: 2px solid var(--bg-accent);
             padding-left: 1.5rem;
         }
         
-        /* Tarjetas de Experiencia (Estilo Project-Card) */
+      
         .job-entry {
             position: relative;
-            background: var(--bg-light); /* Fondo de tarjeta */
+            background: var(--bg-light); 
             padding: 1.5rem;
-            border-radius: 14px; /* Tomado de .project-card */
+            border-radius: 14px; 
             border: 1px solid var(--bg-accent);
             margin-bottom: 1.5rem;
-            box-shadow: 0 6px 16px var(--dark-shadow); /* Tomado de .project-card */
+            box-shadow: 0 6px 16px var(--dark-shadow); 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .job-entry::before {
@@ -147,8 +145,8 @@
             transition: transform 0.3s ease;
         }
         .job-entry:hover {
-            transform: translateY(-6px); /* Tomado de .project-card:hover */
-            box-shadow: 0 12px 24px var(--accent-shadow); /* Tomado de .project-card:hover */
+            transform: translateY(-6px); 
+            box-shadow: 0 12px 24px var(--accent-shadow); 
         }
         .job-entry:hover::before {
             transform: scale(1.2);
@@ -170,18 +168,18 @@
             margin-top: 0.25rem;
         }
         .job-description {
-            color: var(--text-muted); /* Tomado de .project-description */
+            color: var(--text-muted); 
             line-height: 1.6;
             margin-top: 0.75rem;
         }
 
-        /* === Botón de "Ver Proyecto" (Estilo project-link) === */
+       
         .project-cv-link {
             display: inline-block;
             text-align: center;
             background: transparent;
             color: var(--accent);
-            padding: 0.7rem 1.2rem; /* Ligeramente ajustado */
+            padding: 0.7rem 1.2rem;
             border: 2px solid var(--accent);
             border-radius: 8px;
             text-decoration: none;
@@ -195,7 +193,7 @@
             transform: translateY(-2px);
         }
 
-        /* === Enlaces y Botón de Descarga Interactivos === */
+       
         .contact-link {
             transition: transform 0.2s ease, color 0.2s ease;
         }
@@ -209,7 +207,7 @@
             border-radius: 8px;
             padding: 0.7rem 1.2rem;
             transition: all 0.3s ease;
-            z-index: 1001; /* Asegura que esté sobre el contenido */
+            z-index: 1001; 
         }
         .download-btn:hover {
             transform: translateY(-3px);
@@ -217,7 +215,7 @@
             background: var(--accent-glass);
         }
 
-        /* === Estilos de Impresión === */
+       
         @media print {
             body { background-color: #ffffff; color: #000000; }
             .no-print { display: none; }
@@ -429,27 +427,27 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Configura el IntersectionObserver
+        
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Cuando el elemento es visible, añade la clase
+                       
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // La animación solo ocurre una vez
+                        observer.unobserve(entry.target); 
                     }
                 });
             }, {
-                threshold: 0.1 // Se activa cuando el 10% del elemento es visible
+                threshold: 0.1 
             });
 
-            // Selecciona todos los elementos que quieres animar
+          
             const targets = document.querySelectorAll('.animate-on-scroll');
             
-            // Observa cada elemento y asígnales un retraso escalonado
+           
             targets.forEach((target, index) => {
-                // Si el elemento no tiene un --delay, le asigna uno
+                
                 if (!target.style.getPropertyValue('--delay')) {
-                    // Multiplica el índice para crear un retraso escalonado
+                   
                     target.style.setProperty('--delay', `${index * 0.1}s`);
                 }
                 observer.observe(target);
