@@ -1,38 +1,86 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import projectsData from '../data/projects';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import '../styles/Projects.css';
 
-const ProjectGrid = ({ projects }) => {
+// --- Constantes para la lógica ---
+const INITIAL_COUNT = 2; // Mostrar 2 proyectos inicialmente
+const INCREMENT = 2;     // Mostrar 2 más cada vez
+
+// --- Componente ProjectGrid Modificado ---
+// Ahora acepta 'visibleCount' para saber cuántos mostrar
+const ProjectGrid = ({ projects, visibleCount }) => {
   return (
     <div className="projects-grid">
       {projects.map((proj, index) => (
-        <motion.div
-          key={proj.id}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay: index * 0.1, duration: 0.5 }}
+        // 1. Añadimos un wrapper
+        <div 
+          key={proj.id} 
+          // 2. Aplicamos 'is-visible' si el índice es menor que el conteo
+          className={`project-card-wrapper ${index < visibleCount ? 'is-visible' : ''}`}
         >
-          <ProjectCard
-            title={proj.title}
-            description={proj.description}
-            technologies={proj.technologies}
-            image={proj.image}
-            link={proj.link}
-          />
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+          >
+            <ProjectCard
+              title={proj.title}
+              description={proj.description}
+              technologies={proj.technologies}
+              image={proj.image}
+              link={proj.link}
+            />
+          </motion.div>
+        </div>
       ))}
     </div>
   );
 };
 
 function Projects() {
+  // 3. Cambiamos los estados a un conteo numérico
+  const [frontendCount, setFrontendCount] = useState(INITIAL_COUNT);
+  const [backendCount, setBackendCount] = useState(INITIAL_COUNT);
+  const [mobileCount, setMobileCount] = useState(INITIAL_COUNT);
 
+  // Filtramos los proyectos (sin cambios)
   const frontendProjects = projectsData.filter(p => p.category === 'frontend');
   const backendProjects = projectsData.filter(p => p.category === 'backend');
   const mobileProjects = projectsData.filter(p => p.category === 'mobile');
+
+  // 4. Variables para saber si todos están visibles
+  const allFrontendVisible = frontendCount >= frontendProjects.length;
+  const allBackendVisible = backendCount >= backendProjects.length;
+  const allMobileVisible = mobileCount >= mobileProjects.length;
+
+  // 5. Nuevos Handlers para los botones
+  const handleFrontendToggle = () => {
+    if (allFrontendVisible) {
+      setFrontendCount(INITIAL_COUNT); // Resetear
+    } else {
+      setFrontendCount(prev => Math.min(prev + INCREMENT, frontendProjects.length)); // Añadir 2
+    }
+  };
+
+  const handleBackendToggle = () => {
+    if (allBackendVisible) {
+      setBackendCount(INITIAL_COUNT); // Resetear
+    } else {
+      setBackendCount(prev => Math.min(prev + INCREMENT, backendProjects.length)); // Añadir 2
+    }
+  };
+
+  const handleMobileToggle = () => {
+    if (allMobileVisible) {
+      setMobileCount(INITIAL_COUNT); // Resetear
+    } else {
+      setMobileCount(prev => Math.min(prev + INCREMENT, mobileProjects.length)); // Añadir 2
+    }
+  };
 
   const titleVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -51,7 +99,7 @@ function Projects() {
         Mis Proyectos
       </motion.h2>
       
-      {/* Sección Frontend */}
+      {/* === SECCIÓN FRONTEND === */}
       <motion.h3 
         className="projects-category-title"
         initial="hidden"
@@ -61,9 +109,20 @@ function Projects() {
       >
         Desarrollo Frontend
       </motion.h3>
-      <ProjectGrid projects={frontendProjects} />
+      {/* 6. Pasamos el conteo visible */}
+      <ProjectGrid projects={frontendProjects} visibleCount={frontendCount} />
+      {/* 7. Mostramos el botón SOLO si hay más de 2 proyectos */}
+      {frontendProjects.length > INITIAL_COUNT && (
+        <button 
+          className="show-more-button" 
+          onClick={handleFrontendToggle}
+        >
+          <span>{allFrontendVisible ? 'Ver menos' : 'Ver más'}</span>
+          {allFrontendVisible ? <FaChevronUp /> : <FaChevronDown />}
+        </button>
+      )}
 
-      {/* Sección Backend */}
+      {/* === SECCIÓN BACKEND === */}
       <motion.h3 
         className="projects-category-title"
         initial="hidden"
@@ -73,9 +132,18 @@ function Projects() {
       >
         Desarrollo Backend
       </motion.h3>
-      <ProjectGrid projects={backendProjects} />
+      <ProjectGrid projects={backendProjects} visibleCount={backendCount} />
+      {backendProjects.length > INITIAL_COUNT && (
+        <button 
+          className="show-more-button" 
+          onClick={handleBackendToggle}
+        >
+          <span>{allBackendVisible ? 'Ver menos' : 'Ver más'}</span>
+          {allBackendVisible ? <FaChevronUp /> : <FaChevronDown />}
+        </button>
+      )}
 
-      {/* Sección Mobile */}
+      {/* === SECCIÓN MOBILE === */}
       <motion.h3 
         className="projects-category-title"
         initial="hidden"
@@ -85,7 +153,16 @@ function Projects() {
       >
         Desarrollo de Aplicaciones
       </motion.h3>
-      <ProjectGrid projects={mobileProjects} />
+      <ProjectGrid projects={mobileProjects} visibleCount={mobileCount} />
+      {mobileProjects.length > INITIAL_COUNT && (
+        <button 
+          className="show-more-button" 
+          onClick={handleMobileToggle}
+        >
+          <span>{allMobileVisible ? 'Ver menos' : 'Ver más'}</span>
+          {allMobileVisible ? <FaChevronUp /> : <FaChevronDown />}
+        </button>
+      )}
 
     </section>
   );
