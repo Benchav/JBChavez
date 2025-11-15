@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* === Paleta de Colores (Basada en tu project-card.css) === */
+     
         :root {
             --bg-dark: #0a192f;
             --bg-light: #112240;
@@ -37,8 +37,7 @@
             max-width: 1000px;
         }
 
-        
-        /* === Animación de Carga (al hacer scroll) === */
+   
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -50,7 +49,7 @@
             transform: translateY(0);
         }
 
-        /* === Texto de Encabezado con Gradiente y Animación === */
+    
         @keyframes gradient-pulse {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -66,7 +65,7 @@
             animation: gradient-pulse 4s ease infinite;
         }
 
-        /* === Contenedor Principal (Estilo Project-Card) === */
+       
         .main-container {
             background: var(--bg-light);
             border-radius: 14px; 
@@ -74,8 +73,7 @@
             box-shadow: 0 6px 16px var(--dark-shadow); 
         }
 
-        
-        /* === Títulos de Sección con Icono === */
+     
         .section-title {
             color: var(--accent);
             font-size: 1.25rem;
@@ -94,7 +92,7 @@
         }
 
         
-        /* === Píldoras de Habilidad (Estilo "Glassmorphism" de tech-pill) === */
+   
         .skill-pill {
             display: inline-block;
             background: var(--accent-glass);
@@ -118,14 +116,14 @@
         }
 
         
-        /* === Línea de Tiempo (Timeline) Interactiva === */
+   
         .timeline {
             position: relative;
             border-left: 2px solid var(--bg-accent);
             padding-left: 1.5rem;
         }
         
-        /* Tarjetas de Experiencia (Estilo Project-Card) */
+     
         .job-entry {
             position: relative;
             background: var(--bg-light); 
@@ -179,7 +177,7 @@
         }
 
         
-        /* === Botón de "Ver Proyecto" (Estilo project-link) === */
+     
         .project-cv-link {
             display: inline-block;
             text-align: center;
@@ -200,7 +198,7 @@
         }
 
         
-        /* === Enlaces y Botón de Descarga Interactivos === */
+      
         .contact-link {
             transition: transform 0.2s ease, color 0.2s ease;
         }
@@ -209,14 +207,14 @@
             transform: translateY(-2px);
         }
 
-        /* === ARREGLO: z-index y estilos de botón === */
+ 
         .fixed-btn {
             font-weight: 600;
             letter-spacing: 0.5px;
             border-radius: 8px;
             padding: 0.7rem 1.2rem;
             transition: all 0.3s ease;
-            z-index: 9999; /* <-- ARREGLO: z-index alto para estar al frente */
+            z-index: 9999;
         }
         .fixed-btn:hover {
             transform: translateY(-3px);
@@ -225,7 +223,7 @@
         }
 
         
-        /* === Estilos de Impresión === */
+  
         @media print {
             body { background-color: #ffffff; color: #000000; }
             .no-print { display: none; }
@@ -255,7 +253,7 @@
         Regresar
     </a>
 
-    <a href="/JoshuaChavez_CV.pdf" download="JoshuaChavez_CV.pdf" 
+    <a href="JoshuaChavez_CV.pdf" download="JoshuaChavez_CV.pdf" 
        id="download-btn" 
        class="no-print fixed-btn fixed top-4 right-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] px-5 py-2 rounded-lg font-medium transform">
         Descargar PDF
@@ -446,27 +444,27 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Configura el IntersectionObserver
+        
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Cuando el elemento es visible, añade la clase
+                      
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // La animación solo ocurre una vez
+                        observer.unobserve(entry.target); 
                     }
                 });
             }, {
-                threshold: 0.1 // Se activa cuando el 10% del elemento es visible
+                threshold: 0.1 
             });
 
-            // Selecciona todos los elementos que quieres animar
+         
             const targets = document.querySelectorAll('.animate-on-scroll');
             
-            // Observa cada elemento y asígnales un retraso escalonado
+           
             targets.forEach((target, index) => {
-                // Si el elemento no tiene un --delay, le asigna uno
+              
                 if (!target.style.getPropertyValue('--delay')) {
-                    // Multiplica el índice para crear un retraso escalonado
+                   
                     target.style.setProperty('--delay', `${index * 0.1}s`);
                 }
                 observer.observe(target);
