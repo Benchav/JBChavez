@@ -1,4 +1,4 @@
-/* 🔧 Estilos globales para prevenir overflow lateral */
+
 * {
     box-sizing: border-box;
   }
@@ -12,6 +12,6 @@
 
 
   section {
-    scroll-margin-top: 100px; /* o la altura exacta de tu header */
+    scroll-margin-top: 100px; 
   }
   
