@@ -161,6 +161,15 @@ const projects = [
       link: "https://github.com/Benchav/APP_InsBarrera.git",
       category: "mobile",
       technologies: ["Flutter", "Dart", "C# API", "Sql"]
+    },
+      {
+      id: 19,
+      title: "Aula en pausa",
+      description: "Aplicación demo para niños, interactiva, espacios de descanso y trabajos en horario de clases",
+      image: "https://i.ibb.co/mrYzK988/Whats-App-Image-2025-11-15-at-5-14-06-PM.jpg",
+      link: "https://github.com/Benchav/Aula-Pausa.git",
+      category: "mobile",
+      technologies: ["React native", "JavaScript"]
     }
   ];
   
