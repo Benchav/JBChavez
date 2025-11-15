@@ -1,6 +1,3 @@
-/* ================================
-   SECCIÓN PRINCIPAL
-=================================== */
 .projects-section {
   padding: 6rem 8%;
   background: #0a192f;
@@ -30,9 +27,7 @@
   border-radius: 2px;
 }
 
-/* ================================
-   TÍTULOS DE CATEGORÍA
-=================================== */
+
 .projects-category-title {
   color: #64ffda;
   font-size: 2rem;
@@ -46,9 +41,7 @@
   padding-bottom: 0.5rem;
 }
 
-/* ================================
-   GRID DE PROYECTOS
-=================================== */
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -58,9 +51,7 @@
   padding: 0 2%;
 }
 
-/* ================================
-   TARJETAS – IMAGEN
-=================================== */
+
 .image-container {
   height: 220px;
   border-radius: 10px;
@@ -95,9 +86,7 @@
   filter: brightness(1);
 }
 
-/* ================================
-   BOTÓN — VER MÁS
-=================================== */
+
 .show-more-button {
   display: inline-flex;
   align-items: center;
@@ -119,9 +108,7 @@
   transform: translateY(-2px);
 }
 
-/* ================================
-   RESPONSIVE – TABLET / MÓVIL
-=================================== */
+
 @media (max-width: 768px) {
   .projects-section {
     padding: 4rem 5%;
@@ -140,23 +127,20 @@
     padding: 0;
   }
 
-  /* GRID ajustado */
+
   .projects-grid {
     grid-template-columns: 1fr;
     padding: 0;
-    gap: 0; /* 🔥 Gap eliminado para usar animación */
+    gap: 0; 
   }
 
   .image-container {
     height: 200px;
   }
 
-  /* ================================
-     ✔ NUEVA LÓGICA MÓVIL "SUTIL"
-     con animación + colapso
-  ================================= */
+ 
   .projects-grid .project-card-wrapper {
-    display: block; /* No usar display:none */
+    display: block; 
     opacity: 0;
     max-height: 0;
     overflow: hidden;
@@ -173,16 +157,14 @@
   }
 }
 
-/* ================================
-   RESPONSIVE – MÓVIL PEQUEÑO
-=================================== */
+
 @media (max-width: 480px) {
   .section-title {
     font-size: 1.75rem;
   }
 
   .projects-grid .project-card-wrapper.is-visible {
-    margin-bottom: 1.5rem; /* gap más pequeño */
+    margin-bottom: 1.5rem; 
   }
 
   .image-container {
@@ -190,9 +172,7 @@
   }
 }
 
-/* ================================
-   ESCRITORIO
-=================================== */
+
 @media (min-width: 769px) {
   .projects-grid .project-card-wrapper {
     display: block;
@@ -202,12 +182,11 @@
     margin-bottom: 0;
   }
 
-  /* Restaurar gap en escritorio */
+
   .projects-grid {
     gap: 2.5rem;
   }
 
-  /* Ocultar botón en escritorio */
   .show-more-button {
     display: none;
   }

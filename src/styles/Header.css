@@ -9,9 +9,6 @@
   --glass-cta-border: rgba(100,255,218,0.12);
 }
 
-/* ======================================================
-   HEADER PRINCIPAL
-====================================================== */
 .header {
   position: fixed;
   top: 0;
@@ -50,7 +47,6 @@
 .logo-highlight { color: var(--accent); }
 .header.menu-open .logo { color: var(--accent); }
 
-/* NAV DESKTOP */
 .nav-container-desktop { display: block; }
 .nav-container-desktop .nav-list {
   display: flex;
@@ -73,7 +69,7 @@
 }
 .nav-container-desktop .nav-item:hover { color: var(--accent); transform: translateY(-2px); }
 
-/* refined underline using pseudo element on label */
+
 .nav-item-label {
   position: relative;
   z-index: 1;
@@ -92,7 +88,7 @@
 }
 .nav-container-desktop .nav-item:hover .nav-item-label::after { width: 100%; }
 
-/* HAMBURGER */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -113,7 +109,7 @@
 .hamburger.active .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* OVERLAY */
+
 .menu-overlay {
   position: fixed;
   inset: 0;
@@ -125,7 +121,7 @@
   transition: opacity 0.22s ease;
 }
 
-/* NAV PANEL (mobile) */
+
 .nav-container { display: none; }
 
 @media (max-width: 768px) {
@@ -157,7 +153,7 @@
     overflow: auto;
   }
 
-  /* Panel header */
+
   .nav-panel-header {
     position: absolute;
     top: 16px;
@@ -206,7 +202,7 @@
   }
   .nav-close:hover { background: rgba(100,255,218,0.06); transform: translateY(-2px); }
 
-  /* nav list */
+
   .nav-container .nav-list {
     display: flex;
     flex-direction: column;
@@ -235,7 +231,7 @@
   .nav-item-label { font-weight: 700; font-size: 1.18rem; color: #eaf6ff; letter-spacing: 0.2px; }
   .nav-item-arrow { color: rgba(255,255,255,0.12); transform: translateX(2px); font-size: 1.4rem; }
 
-  /* CTA */
+
   .nav-cta-button {
     display: flex;
     align-items: center;
@@ -257,7 +253,7 @@
   .nav-cta-button svg { opacity: 0.95; }
   .nav-cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(100,255,218,0.06); }
 
-  /* socials */
+
   .nav-socials {
     margin-top: auto;
     padding-top: 2rem;
@@ -280,7 +276,6 @@
   .logo { font-size: 1.22rem; }
 }
 
-/* Accessibility & reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .hamburger-line, .nav-container, .menu-overlay, .nav-item, .nav-cta-button { transition: none !important; animation: none !important; }
 }

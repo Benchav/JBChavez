@@ -1,8 +1,8 @@
-/* 🔧 Estilos globales (mantenidos) */
+
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
 
-/* --- NUEVO: Orbes de fondo --- */
+
 .glow-orb {
   position: absolute;
   border-radius: 50%;
@@ -14,52 +14,52 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
 .orb-1 {
   width: 400px;
   height: 400px;
-  background: #64ffda; /* Color acento */
+  background: #64ffda; 
   top: 10%;
   left: 15%;
 }
 .orb-2 {
   width: 350px;
   height: 350px;
-  background: #3a86ff; /* Un segundo color */
+  background: #3a86ff; 
   bottom: 10%;
   right: 15%;
 }
 
-/* --- HOME: Layout de 2 columnas --- */
+
 .home {
   display: flex;
-  flex-direction: row; /* Cambio a fila */
-  justify-content: space-between; /* Espacio entre texto e imagen */
+  flex-direction: row; 
+  justify-content: space-between; 
   align-items: center;
   min-height: 100vh;
-  padding: 6rem 10% 2rem; /* Más padding lateral */
-  background: #0a192f; /* Fondo base sólido */
+  padding: 6rem 10% 2rem; 
+  background: #0a192f; 
   color: #ccd6f6;
-  overflow: hidden; /* Importante para los orbes */
-  position: relative; /* Para los orbes y sociales */
+  overflow: hidden; 
+  position: relative; 
 }
 
-/* Contenedor de texto (columna izquierda) */
+
 .home-text-content {
-  flex: 1; /* Ocupa el espacio disponible */
+  flex: 1; 
   max-width: 650px;
-  text-align: left; /* Alineado a la izquierda */
+  text-align: left; 
   z-index: 2;
 }
 
-/* Contenedor de imagen (columna derecha) */
+
 .img-container {
   position: relative;
-  flex-shrink: 0; /* Evita que se encoja */
+  flex-shrink: 0; 
   margin-left: 3rem;
-  width: min(350px, 100%); /* Tamaño máximo */
+  width: min(350px, 100%); 
   height: min(350px, 100%);
-  animation: float 6s ease-in-out infinite; /* Animación de flotar */
+  animation: float 6s ease-in-out infinite; 
   z-index: 1;
 }
 
-/* --- NUEVO: Animación de flotar --- */
+
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
@@ -71,16 +71,16 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #64ffda; /* Borde más grueso */
+  border: 4px solid #64ffda; 
   box-shadow: 0 10px 40px -10px rgba(100, 255, 218, 0.3);
 }
 
-/* --- Títulos y Texto --- */
+
 .title {
-  font-size: clamp(2.5rem, 6vw, 4.5rem); /* Más grande */
+  font-size: clamp(2.5rem, 6vw, 4.5rem); 
   margin: 0;
   line-height: 1.1;
-  font-weight: 700; /* Más peso */
+  font-weight: 700; 
   letter-spacing: -1px;
 }
 
@@ -90,19 +90,19 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
   display: inline-block;
 }
 
-/* Subrayado animado en HOVER */
+
 .name-highlight::after {
   content: '';
   position: absolute;
   bottom: 0px;
   left: 0;
-  width: 0%; /* Inicia en 0 */
+  width: 0%; 
   height: 4px;
   background: #64ffda;
-  transition: width 0.3s ease-out; /* Anima el ancho */
+  transition: width 0.3s ease-out; 
 }
 .name-highlight:hover::after {
-  width: 100%; /* Se expande en hover */
+  width: 100%; 
 }
 
 .subtitle {
@@ -112,7 +112,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
   font-weight: 400;
 }
 
-/* --- NUEVO: Cursor parpadeante --- */
+
 .cursor {
   color: #64ffda;
   font-weight: 700;
@@ -127,20 +127,20 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
   font-size: clamp(1rem, 2.5vw, 1.1rem);
   line-height: 1.6;
   max-width: 600px;
-  margin: 1.5rem 0 2.5rem; /* Margen a la izquierda 0 */
+  margin: 1.5rem 0 2.5rem; 
   padding: 0;
   color: #8892b0;
 }
 
-/* --- NUEVO: Contenedor de Botones CTA --- */
+
 .cta-container {
   display: flex;
-  flex-wrap: wrap; /* Para que se apilen en móvil si no caben */
+  flex-wrap: wrap; 
   align-items: center;
   gap: 1rem;
 }
 
-/* Estilo base de botón */
+
 .cta-button {
   display: inline-flex;
   align-items: center;
@@ -156,7 +156,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
   border: 2px solid #64ffda;
 }
 
-/* Botón Primario (Relleno) */
+
 .cta-primary {
   background: #64ffda;
   color: #0a192f;
@@ -169,7 +169,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
   box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3);
 }
 
-/* Botón Secundario (Borde) */
+
 .cta-secondary {
   background: transparent;
   color: #64ffda;
@@ -179,7 +179,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
   transform: translateY(-2px);
 }
 
-/* --- NUEVO: Barra Social Vertical --- */
+
 .home-socials {
   position: absolute;
   bottom: 5rem;
@@ -191,7 +191,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
   z-index: 2;
 }
 
-/* Línea decorativa */
+
 .home-socials::after {
   content: '';
   width: 2px;
@@ -200,7 +200,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
   margin-top: 0.5rem;
 }
 
-/* Sobreescribimos estilos de SocialLinks */
+
 .home-socials .social-links {
   flex-direction: column;
   padding: 0;
@@ -210,43 +210,43 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
   font-size: 1.5rem;
 }
 .home-socials .social-link::after {
-  display: none; /* Quitamos el subrayado */
+  display: none; 
 }
 
-/* --- Media Queries --- */
+
 @media (max-width: 900px) {
   .home {
-    flex-direction: column; /* Cambia a columna */
+    flex-direction: column; 
     justify-content: center;
     padding: 6rem 5% 4rem;
     min-height: 100vh;
   }
   
   .home-text-content {
-    order: 2; /* Texto abajo */
-    text-align: center; /* Texto centrado */
+    order: 2;
+    text-align: center; 
     max-width: 100%;
     margin-top: 2rem;
   }
   
   .description {
-    margin: 1.5rem auto 2.5rem; /* Centramos la descripción */
+    margin: 1.5rem auto 2.5rem; 
     max-width: 90%;
   }
 
   .img-container {
-    order: 1; /* Imagen arriba */
+    order: 1; 
     margin: 0;
     width: min(200px, 50vw);
     height: min(200px, 50vw);
-    animation: none; /* Quitamos la flotación en móvil */
+    animation: none; 
   }
   
   .cta-container {
-    justify-content: center; /* Centramos los botones */
+    justify-content: center; 
   }
 
-  /* Ocultamos la barra social en móvil para un look más limpio */
+ 
   .home-socials {
     display: none;
   }
@@ -263,7 +263,7 @@ html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
     font-size: 1.3rem;
   }
   .cta-button {
-    width: 100%; /* Botones ocupan todo el ancho */
+    width: 100%; 
     font-size: 0.9rem;
     padding: 0.9rem 1rem;
   }

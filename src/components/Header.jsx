@@ -16,7 +16,7 @@ function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // open/close side effects: block scroll, manage focus, ESC key
+
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') setIsMenuOpen(false); };
 
@@ -106,7 +106,7 @@ function Header() {
       <AnimatePresence>
         {isMenuOpen && (
           <>
-            {/* Overlay detrás del panel */}
+
             <motion.div
               className="menu-overlay"
               initial={{ opacity: 0 }}
@@ -178,7 +178,6 @@ function Header() {
         )}
       </AnimatePresence>
 
-      {/* Navegación desktop */}
       <nav className="nav-container-desktop" aria-label="Navegación principal">
         <ul className="nav-list">
           {navItems.map((item, idx) => (
