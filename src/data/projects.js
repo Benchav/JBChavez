@@ -63,7 +63,7 @@ const projects = [
       technologies: ["React", "Vite", "tailwind css"]
     },
     {
-      id: 10,
+      id: 8,
       title: "Edu-Incluye",
       description: "Aplicación web para estudio y aprendisaje del lenguaje de señas Nicaraguense",
       image: "https://i.ibb.co/8LTqs8x5/Edu-Incluye.jpg",
@@ -71,7 +71,7 @@ const projects = [
       category: "frontend",
       technologies: ["React", "Vite","tailwind css"]
     },  {
-      id: 18,
+      id: 9,
       title: "Avicon",
       description: "Gestor avicola, producción, cuidados y alimentación de aves de corral",
       image: "https://i.ibb.co/XkYyqqKS/avicon.jpg",
@@ -81,7 +81,7 @@ const projects = [
     },
     // --- Backend ---
     {
-      id: 9,
+      id: 10,
       title: "Fast-api",
       description: "Fast api en python para enviar correos con resend.",
       image: "https://i.ibb.co/KcqPG7nd/fastapi.png",
@@ -90,7 +90,7 @@ const projects = [
       technologies: ["HTML5", "Css", "Python", "FastApi"]
     },
     {
-      id: 13,
+      id: 11,
       title: "fast tasko",
       description: "fast api de la apliación tasko, usando python, crud completo y autenticación base de datos en firebase",
       image: "https://i.ibb.co/zhNhsnHP/fasttasko.jpg",
@@ -99,7 +99,7 @@ const projects = [
       technologies: ["Python", "FastAPI", "Firebase"]
     },
     {
-      id: 14,
+      id: 12,
       title: "Api insumos barrera",
       description: "Api en ASP.Net usando C#, crud completo",
       image: "https://i.ibb.co/hJnnY9GL/api-insumosbarrera.jpg",
@@ -108,7 +108,7 @@ const projects = [
       technologies: ["C#", "ASP.NET", "API Rest", "Sql"]
     },
     {
-      id: 15,
+      id: 13,
       title: "Api zapatos",
       description: "Api completa para gestión de zapatos por roles y permisos, usando Node.js y JavaScript",
       image: "https://i.ibb.co/Pkr2dX1/payless-api.jpg",
@@ -117,7 +117,7 @@ const projects = [
       technologies: ["Node.js", "JavaScript", "JWT", "Firebase"]
     },
     {
-      id: 16,
+      id: 14,
       title: "Api Constructora",
       description: "Api diseñada en node.js en JavaScript, JWT token, roles y permisos, 13 modelos y su crud completo, protección de rutas y validaciones",
       image: "https://i.ibb.co/sJVvM3NM/api-constructora.jpg",
@@ -126,7 +126,7 @@ const projects = [
       technologies: ["Node.js", "JWT", "MongoDB"]
     },
      {
-      id: 19,
+      id: 15,
       title: "Avicon Api",
       description: "Api diseñada en node.js en JavaScript, JWT token, roles y permisos para la gestión avicola,",
       image: "https://i.ibb.co/b0xKDSp/aviconapi.png",
@@ -135,7 +135,7 @@ const projects = [
       technologies: ["Node.js","TypeScript", "JWT", "sql"]
     },
     {
-      id: 17,
+      id: 16,
       title: "Api insumos",
       description: "Api diseñada en ASP.NET con estructura DDD completa hecha con C#",
       image: "https://i.ibb.co/spp5QFQP/pasteleria-api.jpg",
@@ -145,7 +145,7 @@ const projects = [
     },
     // --- Mobile ---
     {
-      id: 11,
+      id: 17,
       title: "Tasko",
       description: "Aplicación de productividad, gestiòn y organizaciòn de tareas usando React native js y fastapi python",
       image: "https://i.ibb.co/FLncfXVR/Home.jpg",
@@ -154,7 +154,7 @@ const projects = [
       technologies: ["React Native", "FastAPI", "Python", "Firebase"]
     },
     {
-      id: 12,
+      id: 18,
       title: "InsBarrera",
       description: "Apliación de compra de productos pasteles, carrito de compras, compra, inventario usando Flutter y Api en C#",
       image: "https://i.ibb.co/TDq2QfjQ/insbarrera.jpg",
