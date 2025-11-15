@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-    
+        /* === Paleta de Colores (Basada en tu project-card.css) === */
         :root {
             --bg-dark: #0a192f;
             --bg-light: #112240;
@@ -37,12 +37,12 @@
             max-width: 1000px;
         }
 
-       
+        
+        /* === Animación de Carga (al hacer scroll) === */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-           
             transition-delay: var(--delay, 0s); 
         }
         .animate-on-scroll.is-visible {
@@ -50,6 +50,7 @@
             transform: translateY(0);
         }
 
+        /* === Texto de Encabezado con Gradiente y Animación === */
         @keyframes gradient-pulse {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -65,6 +66,7 @@
             animation: gradient-pulse 4s ease infinite;
         }
 
+        /* === Contenedor Principal (Estilo Project-Card) === */
         .main-container {
             background: var(--bg-light);
             border-radius: 14px; 
@@ -72,7 +74,8 @@
             box-shadow: 0 6px 16px var(--dark-shadow); 
         }
 
-    
+        
+        /* === Títulos de Sección con Icono === */
         .section-title {
             color: var(--accent);
             font-size: 1.25rem;
@@ -90,7 +93,8 @@
             height: 20px;
         }
 
-     
+        
+        /* === Píldoras de Habilidad (Estilo "Glassmorphism" de tech-pill) === */
         .skill-pill {
             display: inline-block;
             background: var(--accent-glass);
@@ -113,14 +117,15 @@
             box-shadow: 0 0 10px rgba(100, 255, 218, 0.4); 
         }
 
-     
+        
+        /* === Línea de Tiempo (Timeline) Interactiva === */
         .timeline {
             position: relative;
             border-left: 2px solid var(--bg-accent);
             padding-left: 1.5rem;
         }
         
-      
+        /* Tarjetas de Experiencia (Estilo Project-Card) */
         .job-entry {
             position: relative;
             background: var(--bg-light); 
@@ -173,7 +178,8 @@
             margin-top: 0.75rem;
         }
 
-       
+        
+        /* === Botón de "Ver Proyecto" (Estilo project-link) === */
         .project-cv-link {
             display: inline-block;
             text-align: center;
@@ -193,7 +199,8 @@
             transform: translateY(-2px);
         }
 
-       
+        
+        /* === Enlaces y Botón de Descarga Interactivos === */
         .contact-link {
             transition: transform 0.2s ease, color 0.2s ease;
         }
@@ -201,21 +208,24 @@
             color: var(--accent);
             transform: translateY(-2px);
         }
-        .download-btn {
+
+        /* === ARREGLO: z-index y estilos de botón === */
+        .fixed-btn {
             font-weight: 600;
             letter-spacing: 0.5px;
             border-radius: 8px;
             padding: 0.7rem 1.2rem;
             transition: all 0.3s ease;
-            z-index: 1001; 
+            z-index: 9999; /* <-- ARREGLO: z-index alto para estar al frente */
         }
-        .download-btn:hover {
+        .fixed-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px var(--accent-shadow);
             background: var(--accent-glass);
         }
 
-       
+        
+        /* === Estilos de Impresión === */
         @media print {
             body { background-color: #ffffff; color: #000000; }
             .no-print { display: none; }
@@ -236,9 +246,18 @@
 </head>
 <body class="p-4 md:p-8">
 
-    <a href="JoshuaChavez_CV.pdf" download="JoshuaChavez_CV.pdf" 
+    <a href="https://joshuachavez.vercel.app/" 
+       id="return-btn" 
+       class="no-print fixed-btn fixed top-4 left-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] px-5 py-2 rounded-lg font-medium transform flex items-center gap-2">
+        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Regresar
+    </a>
+
+    <a href="/JoshuaChavez_CV.pdf" download="JoshuaChavez_CV.pdf" 
        id="download-btn" 
-       class="no-print download-btn fixed top-4 right-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] px-5 py-2 rounded-lg font-medium transform">
+       class="no-print fixed-btn fixed top-4 right-4 bg-transparent border-2 border-[#64ffda] text-[#64ffda] px-5 py-2 rounded-lg font-medium transform">
         Descargar PDF
     </a>
 
@@ -393,7 +412,7 @@
                         </div>
                     </div>
                     <div class="mb-6">
-                        <h4 class="font-semibold text-white mb-3 print-text-black">Móvil</h4>
+                        <h4 classf="font-semibold text-white mb-3 print-text-black">Móvil</h4>
                         <div class="flex flex-wrap gap-2">
                             <span class="skill-pill">React Native</span>
                             <span class="skill-pill">Flutter</span>
@@ -427,27 +446,27 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-        
+            // Configura el IntersectionObserver
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                       
+                        // Cuando el elemento es visible, añade la clase
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); 
+                        observer.unobserve(entry.target); // La animación solo ocurre una vez
                     }
                 });
             }, {
-                threshold: 0.1 
+                threshold: 0.1 // Se activa cuando el 10% del elemento es visible
             });
 
-          
+            // Selecciona todos los elementos que quieres animar
             const targets = document.querySelectorAll('.animate-on-scroll');
             
-           
+            // Observa cada elemento y asígnales un retraso escalonado
             targets.forEach((target, index) => {
-                
+                // Si el elemento no tiene un --delay, le asigna uno
                 if (!target.style.getPropertyValue('--delay')) {
-                   
+                    // Multiplica el índice para crear un retraso escalonado
                     target.style.setProperty('--delay', `${index * 0.1}s`);
                 }
                 observer.observe(target);
