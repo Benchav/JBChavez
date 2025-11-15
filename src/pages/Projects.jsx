@@ -9,6 +9,20 @@ import '../styles/Projects.css';
 const INITIAL_COUNT = 2; // Mostrar 2 proyectos inicialmente
 const INCREMENT = 2;     // Mostrar 2 más cada vez
 
+// --- NUEVO: Función de Scroll (para el "Ver menos") ---
+const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+  // Obtenemos la altura del header para un scroll preciso
+  const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
+
+  if (section) {
+    const offsetTop = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+  }
+};
+// --- FIN DE LA NUEVA FUNCIÓN ---
+
+
 // --- Componente ProjectGrid Modificado ---
 // Ahora acepta 'visibleCount' para saber cuántos mostrar
 const ProjectGrid = ({ projects, visibleCount }) => {
@@ -61,6 +75,7 @@ function Projects() {
   const handleFrontendToggle = () => {
     if (allFrontendVisible) {
       setFrontendCount(INITIAL_COUNT); // Resetear
+      scrollToSection('frontend-section'); // <-- NUEVO: Scroll al resetear
     } else {
       setFrontendCount(prev => Math.min(prev + INCREMENT, frontendProjects.length)); // Añadir 2
     }
@@ -68,17 +83,19 @@ function Projects() {
 
   const handleBackendToggle = () => {
     if (allBackendVisible) {
-      setBackendCount(INITIAL_COUNT); // Resetear
+      setBackendCount(INITIAL_COUNT);
+      scrollToSection('backend-section'); // <-- NUEVO: Scroll al resetear
     } else {
-      setBackendCount(prev => Math.min(prev + INCREMENT, backendProjects.length)); // Añadir 2
+      setBackendCount(prev => Math.min(prev + INCREMENT, backendProjects.length));
     }
   };
 
   const handleMobileToggle = () => {
     if (allMobileVisible) {
-      setMobileCount(INITIAL_COUNT); // Resetear
+      setMobileCount(INITIAL_COUNT);
+      scrollToSection('mobile-section'); // <-- NUEVO: Scroll al resetear
     } else {
-      setMobileCount(prev => Math.min(prev + INCREMENT, mobileProjects.length)); // Añadir 2
+      setMobileCount(prev => Math.min(prev + INCREMENT, mobileProjects.length));
     }
   };
 
@@ -101,6 +118,7 @@ function Projects() {
       
       {/* === SECCIÓN FRONTEND === */}
       <motion.h3 
+        id="frontend-section" // <-- NUEVO: ID añadido
         className="projects-category-title"
         initial="hidden"
         whileInView="visible"
@@ -124,6 +142,7 @@ function Projects() {
 
       {/* === SECCIÓN BACKEND === */}
       <motion.h3 
+        id="backend-section" // <-- NUEVO: ID añadido
         className="projects-category-title"
         initial="hidden"
         whileInView="visible"
@@ -145,6 +164,7 @@ function Projects() {
 
       {/* === SECCIÓN MOBILE === */}
       <motion.h3 
+        id="mobile-section" // <-- NUEVO: ID añadido
         className="projects-category-title"
         initial="hidden"
         whileInView="visible"
