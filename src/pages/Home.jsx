@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SocialLinks from '../components/SocialLinks'; 
-import { FaArrowRight, FaDownload } from 'react-icons/fa'; 
-import JoshuaCV from '../assets/pdf/joshuaCV.pdf'; 
+import { FaArrowRight, FaAddressCard } from 'react-icons/fa'; 
+// import JoshuaCV from '../assets/pdf/joshuaCV.pdf'; 
 import '../styles/Home.css';
 
 
@@ -16,13 +16,12 @@ const scrollToSection = (id) => {
   }
 };
 
-// 5. Variantes para la animación de cascada
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1, // Cada hijo se animará 0.1s después
+      staggerChildren: 0.1,
     },
   },
 };
@@ -40,11 +39,9 @@ const itemVariants = {
 function Home() {
   return (
     <section id="home" className="home">
-      {/* 6. Orbes de fondo decorativos */}
       <div className="glow-orb orb-1"></div>
       <div className="glow-orb orb-2"></div>
 
-      {/* 7. Barra social vertical */}
       <motion.div 
         className="home-socials"
         initial={{ opacity: 0, x: -50 }}
@@ -54,12 +51,11 @@ function Home() {
         <SocialLinks />
       </motion.div>
 
-      {/* 8. Contenido de texto (columna izquierda) */}
       <motion.div 
         className="home-text-content"
-        variants={containerVariants} // Aplicamos las variantes del contenedor
+        variants={containerVariants}
         initial="hidden"
-        animate="visible" // Se animará al cargar
+        animate="visible"
       >
         <motion.h1 className="title" variants={itemVariants}>
           Hola, Soy <span className="name-highlight">Joshua</span>
@@ -67,7 +63,7 @@ function Home() {
 
         <motion.h2 className="subtitle" variants={itemVariants}>
           Desarrollador JR
-          <span className="cursor">|</span> {/* 9. Cursor parpadeante */}
+          <span className="cursor">|</span>
         </motion.h2>
 
         <motion.p className="description" variants={itemVariants}>
@@ -75,7 +71,6 @@ function Home() {
           <br />Participante en Hackathon Nicaragua 2023-2025, Rally de innovación 2025, JUDC 2023, entusiasta de React, Vite, Flutter, Node.js y Diseño UX/UI.
         </motion.p>
 
-        {/* 10. Contenedor de botones CTA */}
         <motion.div className="cta-container" variants={itemVariants}>
           <motion.button
             className="cta-button cta-primary"
@@ -88,19 +83,20 @@ function Home() {
           </motion.button>
           
           <motion.a
-            href={JoshuaCV} 
+            href="/joshua_cv.html" 
+            target="_blank"  
+            rel="noopener noreferrer"
             className="cta-button cta-secondary"
-            download="JoshuaChavezCV.pdf" 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span>Descargar CV</span> 
-            <FaDownload />
-          </motion.a>  
+            <span>Ver Currículum</span> 
+            <FaAddressCard /> 
+          </motion.a>
         </motion.div>
       </motion.div>
 
-    
+      
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
