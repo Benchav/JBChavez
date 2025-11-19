@@ -2,9 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SocialLinks from '../components/SocialLinks'; 
 import { FaArrowRight, FaAddressCard } from 'react-icons/fa'; 
-// import JoshuaCV from '../assets/pdf/joshuaCV.pdf'; 
 import '../styles/Home.css';
-
 
 const scrollToSection = (id) => {
   const section = document.getElementById(id);
@@ -20,9 +18,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -34,7 +30,6 @@ const itemVariants = {
     transition: { type: 'spring', stiffness: 100 },
   },
 };
-
 
 function Home() {
   return (
@@ -62,13 +57,11 @@ function Home() {
         </motion.h1>
 
         <motion.h2 className="subtitle" variants={itemVariants}>
-          Desarrollador JR
-          <span className="cursor">|</span>
+          Desarrollador Full Stack
         </motion.h2>
 
         <motion.p className="description" variants={itemVariants}>
-          Apasionado por la tecnología y el desarrollo de aplicaciones web.
-          <br />Participante en Hackathon Nicaragua 2023-2025, Rally de innovación 2025, JUDC 2023, entusiasta de React, Vite, Flutter, Node.js y Diseño UX/UI.
+          Estudiante de Ingeniería en Sistemas, actualmente en 4to año y finalizando para ingresar a 5to. Me especializo en el desarrollo de soluciones web y móviles usando tecnologías modernas del ecosistema JavaScript. Enfocado en crear aplicaciones eficientes, escalables y con una experiencia de usuario de alto nivel.
         </motion.p>
 
         <motion.div className="cta-container" variants={itemVariants}>
@@ -83,20 +76,19 @@ function Home() {
           </motion.button>
           
           <motion.a
-            href="/joshua_cv.html" 
-            target="_blank"  
+            href="/joshua_cv.html"
+            target="_blank"
             rel="noopener noreferrer"
             className="cta-button cta-secondary"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span>Ver Currículum</span> 
-            <FaAddressCard /> 
+            <span>Ver Currículum</span>
+            <FaAddressCard />
           </motion.a>
         </motion.div>
       </motion.div>
 
-      
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
